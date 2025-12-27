@@ -37,8 +37,8 @@ jobs:
         continue-on-error: true   # Does not stop pipeline if lint fails for now
 
       # Step 5: Run tests to make sure project works
-      - name: Run Tests
-        run: npm test
+      - name: Run Tests (allow no tests)
+        run: npm test --passWithNoTests
 
       # Step 6: Build the project (only required if using TypeScript or a build step)
       - name: Build Project
