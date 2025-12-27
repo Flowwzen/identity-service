@@ -4,9 +4,9 @@ name: NodeJS CI Pipeline
 # When should the pipeline run?
 on:
   push:
-    branches: ["main"]           # Run on every push to main
+    branches: ["main","develop"]           # Run on every push to main
   pull_request:
-    branches: ["main"]           # Run for pull requests into main
+    branches: ["main","develop"]           # Run for pull requests into main
   workflow_dispatch:             # Run manually from GitHub Actions
 
 # All tasks inside the pipeline are called "jobs"
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"      # You can use 18, 20, or 21
+          node-version: "24"      # You can use 18, 20, or 21
 
       # Step 3: Install dependencies from package-lock.json
       # npm ci is better for CI pipelines than npm install (faster/cleaner)
