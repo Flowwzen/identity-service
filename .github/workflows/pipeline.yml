@@ -28,7 +28,7 @@ jobs:
       # Step 3: Install dependencies from package-lock.json
       # npm ci is better for CI pipelines than npm install (faster/cleaner)
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       # Step 4: Run linting to check code quality
       # This only works if you have "npm run lint" in package.json
